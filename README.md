@@ -1,3 +1,8 @@
+# Gnome Catppuccin setup 
+A warm friendly Gnome setup
+# Screenshot
+![out](https://user-images.githubusercontent.com/68803793/148194211-3a046197-3d48-4480-acf4-9ad858ca22fe.png)
+
 - GTK Theme: [Catppuccin](https://github.com/catppuccin/catppuccin)
 - Icons: [Tela](https://github.com/vinceliuice/Tela-icon-theme)
 - E-Book Reader: [Foliate](https://github.com/johnfactotum/foliate)
