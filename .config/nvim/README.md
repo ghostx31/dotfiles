@@ -2,8 +2,10 @@
 ## This configuration is based on the catppuccin colorscheme. 
 
 # Screenshots
-![nvim1][../../assets/nvim1.png]
-
+<p align="center">
+    <img src="../../assets/nvim1.png"/>
+    <img src="../../assets/nvim2.png" />
+</p>
 # Steps 
 1. Install nvim 
 ```

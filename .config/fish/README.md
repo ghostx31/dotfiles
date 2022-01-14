@@ -1,5 +1,6 @@
 # Simple configuration for Fish shell 
 
 # Screenshot 
-![fish][../../assets/fish.png]
-
+<p align="center">
+    <img src="../../assets/fish.png" />
+</p>
