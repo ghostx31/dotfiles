@@ -16,5 +16,4 @@ A warm friendly Gnome setup
     - [Floating dock](https://extensions.gnome.org/extension/3730/floating-dock/)
     - [Dynamic Panel Transparency](https://extensions.gnome.org/extension/1011/dynamic-panel-transparency/)
 
-- The fish prompt by u/TheCynicalLiger - [Link](https://raw.githubusercontent.com/The-Repo-Club/DotFiles/main/fish/.config/fish/functions/fish_prompt.fish)
 
