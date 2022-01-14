@@ -1,0 +1,93 @@
+term: xterm-256colors
+
+window:
+  dimensions:
+    columns: 105  
+    lines: 30
+  padding: 
+    x: 5
+    y: 5
+  dynamic_padding: true
+  #decorations: none
+  title: ghost@archlinux 
+  dynamic_title: false 
+title: Alacritty
+class:
+  instance: Alacritty
+  general: alacritty
+
+draw_bold_text_with_bright_colors: true
+
+font:
+  normal:
+    family: Roboto Mono
+    style: Regular
+  bold:
+    family: Roboto Mono 
+    style: Bold
+  italic:
+    family: Roboto Mono 
+    style: Italic
+  bold_italic: 
+    family: Roboto Mono  
+    style: Bold Italic 
+
+  size: 13
+
+# Catppuccin!
+colors:
+  # Default colors
+  primary:
+    background: '#1E1E28'
+    foreground: '#DADAE8'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '#1E1E28'
+    cursor: '#B1E3AD'
+
+  # Normal colors
+  normal:
+    black:   '#6E6C7E'
+    red:     '#E38C8F'
+    green:   '#B1E3AD'
+    yellow:  '#EBDDAA'
+    blue:    '#A4B9EF'
+    magenta: '#C6AAE8'
+    cyan:    '#E5B4E2'
+    white:   '#DADAE8'
+
+  # Bright colors
+  bright:
+    black:   '#6E6C7E'
+    red:     '#E38C8F'
+    green:   '#B1E3AD'
+    yellow:  '#EBDDAA'
+    blue:    '#A4B9EF'
+    magenta: '#C6AAE8'
+    cyan:    '#E5B4E2'
+    white:   '#DADAE8'
+
+  indexed_colors:
+    - { index: 16, color: '#F2CECF' }
+    - { index: 17, color: '#3E4058' }
+
+key_bindings:
+  - { key: Return,    mods: Control|Shift, action: SpawnNewInstance            }
+  - { key: V,         mods: Control|Shift, action: Paste                       }
+  - { key: C,         mods: Control|Shift, action: Copy                        }
+  - { key: Insert,    mods: Shift,         action: PasteSelection              }
+  - { key: Key0,      mods: Control,       action: ResetFontSize               }
+  - { key: Equals,    mods: Control,       action: IncreaseFontSize            }
+  - { key: Plus,      mods: Control,       action: IncreaseFontSize            }
+  - { key: Minus,     mods: Control,       action: DecreaseFontSize            }
+  - { key: F11,       mods: None,          action: ToggleFullscreen            }
+  - { key: Paste,     mods: None,          action: Paste                       }
+  - { key: Copy,      mods: None,          action: Copy                        }
+  - { key: L,         mods: Control,       action: ClearLogNotice              }
+  - { key: L,         mods: Control,       chars: "\x0c"                       }
+  - { key: PageUp,    mods: None,          action: ScrollPageUp,   mode: ~Alt  }
+  - { key: PageDown,  mods: None,          action: ScrollPageDown, mode: ~Alt  }
+  - { key: Home,      mods: Shift,         action: ScrollToTop,    mode: ~Alt  }
+  - { key: End,       mods: Shift,         action: ScrollToBottom, mode: ~Alt  }
+                                                                
