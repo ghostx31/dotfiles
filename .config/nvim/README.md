@@ -7,9 +7,10 @@
     <img src="../../assets/nvim2.png" />
 </p>
 # Steps 
+
 1. Install nvim 
 ```
-sudo pacman -S nvim
+    sudo pacman -S nvim
 ```
 2. Move `nvim/` to `~/.config`
 3. Open nvim and type `:PlugInstall` and restart nvim. 
