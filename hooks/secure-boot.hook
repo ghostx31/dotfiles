@@ -1,0 +1,15 @@
+[Trigger]
+Operation = Install 
+Operation = Remove 
+Operation = Upgrade 
+Type = Package 
+Target = linux 
+Target = systemd 
+Target = *dkms*
+Target = nvidia-dkms 
+
+[Action]
+Description = Re-signing images using sbctl...
+When = PostTransaction 
+Exec = /usr/bin/sbctl sign-all 
+
