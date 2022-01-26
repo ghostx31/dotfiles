@@ -3,11 +3,11 @@
 set fish_greeting
 set VIRTUAL_ENV_DISABLE_PROMPT "1"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
-
 # Set settings for https://github.com/franciscolourenco/done
 set -U __done_min_cmd_duration 10000
 set -U __done_notification_urgency_level low
 
+export EDITOR=(which nvim)
 
 ## Environment setup
 # Apply .profile
@@ -43,7 +43,7 @@ function fish_prompt
     set -l cyan (set_color cyan)
     set -l white (set_color white)
 
-    set -g fish_prompt_pwd_dir_length 3
+    #set -g fish_prompt_pwd_dir_length 3
     # Cache exit status
     set -l last_status $status
 
@@ -134,7 +134,7 @@ alias l.="exa -a | egrep '^\.'"                                     # show only 
 
 # Replace some more things with better alternatives
 alias cat='bat --style header --style rules --style snip --style changes --style header'
-
+alias vim='nvim'
 # Common use
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias fixpacman="sudo rm /var/lib/pacman/db.lck"
@@ -164,8 +164,36 @@ alias jctl="journalctl -p 3 -xb"
 # Recent installed packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 alias listupdates="sudo pacman -Sy; clear; pacman -Qu"
-
+alias install="sudo pacman -S"
+alias remove="sudo pacman -Rs"
 ## Run colorscript if session is interactive
+function circles 
+     # Setup colors
+    #Bold Colors
+    set -l bnormal (set_color -o normal)
+    set -l bblack (set_color -o brblack)
+    set -l bred (set_color -o brred)
+    set -l bgreen (set_color -o brgreen)
+    set -l byellow (set_color -o bryellow)
+    set -l bblue (set_color -o brblue)
+    set -l bmagenta (set_color -o brmagenta)
+    set -l bcyan (set_color -o brcyan)
+    set -l bwhite (set_color -o brwhite)
+
+    #Normal Colors
+    set -l normal (set_color normal)
+    set -l black (set_color black)
+    set -l red (set_color red)
+    set -l green (set_color green)
+    set -l yellow (set_color yellow)
+    set -l blue (set_color blue)
+    set -l magenta (set_color magenta)
+    set -l cyan (set_color cyan)
+    set -l white (set_color white)
+    echo $bred" "$byellow" "$bgreen" "$bmagenta" "$bblue" "$bcyan" " 
+end
 if status --is-interactive
-  colorscript random | tail -n +2
+  #colorscript random | tail -n +2
+  circles
+  # echo \n
 end
