@@ -63,7 +63,8 @@ function fish_prompt
     # Configure __fish_git_prompt
     set -g __fish_git_prompt_show_informative_status true
     set -g __fish_git_prompt_showcolorhints true
-
+    set -g fish_prompt_pwd_dir_length 0
+    set -g __fish_git_prompt_showupstream auto
     # Color prompt char red for non-zero exit status
     set -l pcolor $bpurple
     if [ $last_status -ne 0 ]
@@ -71,7 +72,7 @@ function fish_prompt
     end
 
     # Top
-    echo -n $bred"["$byellow"$USER"$bgreen"@"$bblue"$__fish_prompt_hostname"$bnormal $bred(prompt_pwd)"]" $normal(fish_vcs_prompt)
+    echo -n $bred"["$byellow"$USER"$bgreen"@"$bblue"$__fish_prompt_hostname"$bred"]"$bnormal $bred(prompt_pwd)$normal(fish_vcs_prompt)
 
     # Bottom
     echo -e "\n$__fish_prompt_char $normal"
