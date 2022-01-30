@@ -14,6 +14,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'feline-nvim/feline.nvim', { 'branch': 'develop' }
 Plug 'akinsho/bufferline.nvim'
+Plug 'BurntSushi/ripgrep'
 call plug#end()
 " }}}
 " VIM CONFIGURATION {{{

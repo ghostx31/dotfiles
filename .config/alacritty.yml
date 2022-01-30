@@ -1,4 +1,4 @@
-term: xterm-256colors
+TERM: xterm-256colors
 
 window:
   dimensions:
@@ -38,40 +38,39 @@ font:
 colors:
   # Default colors
   primary:
-    background: '#1E1E28'
-    foreground: '#DADAE8'
+    background: '0x1E1D2F'
+    foreground: '0xD9E0EE'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '#1E1E28'
-    cursor: '#B1E3AD'
+    text: '0x1E1D2F'
+    cursor: '0xF5E0DC'
 
   # Normal colors
   normal:
-    black:   '#6E6C7E'
-    red:     '#E38C8F'
-    green:   '#B1E3AD'
-    yellow:  '#EBDDAA'
-    blue:    '#A4B9EF'
-    magenta: '#C6AAE8'
-    cyan:    '#E5B4E2'
-    white:   '#DADAE8'
+    black:   '0x6E6C7E'
+    red:     '0xF28FAD'
+    green:   '0xABE9B3'
+    yellow:  '0xFAE3B0'
+    blue:    '0x96CDFB'
+    magenta: '0xF5C2E7'
+    cyan:    '0x89DCEB'
+    white:   '0xD9E0EE'
 
   # Bright colors
   bright:
-    black:   '#6E6C7E'
-    red:     '#E38C8F'
-    green:   '#B1E3AD'
-    yellow:  '#EBDDAA'
-    blue:    '#A4B9EF'
-    magenta: '#C6AAE8'
-    cyan:    '#E5B4E2'
-    white:   '#DADAE8'
+    black:   '0x988BA2'
+    red:     '0xF28FAD'
+    green:   '0xABE9B3'
+    yellow:  '0xFAE3B0'
+    blue:    '0x96CDFB'
+    magenta: '0xF5C2E7'
+    cyan:    '0x89DCEB'
+    white:   '0xD9E0EE'
 
   indexed_colors:
-    - { index: 16, color: '#F2CECF' }
-    - { index: 17, color: '#3E4058' }
-
+    - { index: 16, color: '0xF8BD96' }
+    - { index: 17, color: '0xF5E0DC' }
 key_bindings:
   - { key: Return,    mods: Control|Shift, action: SpawnNewInstance            }
   - { key: V,         mods: Control|Shift, action: Paste                       }
