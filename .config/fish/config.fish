@@ -43,7 +43,7 @@ function fish_prompt
     set -l cyan (set_color cyan)
     set -l white (set_color white)
 
-    #set -g fish_prompt_pwd_dir_length 3
+    set -g fish_prompt_pwd_dir_length 0
     # Cache exit status
     set -l last_status $status
 
@@ -63,7 +63,6 @@ function fish_prompt
     # Configure __fish_git_prompt
     set -g __fish_git_prompt_show_informative_status true
     set -g __fish_git_prompt_showcolorhints true
-    set -g fish_prompt_pwd_dir_length 0
     set -g __fish_git_prompt_showupstream auto
     # Color prompt char red for non-zero exit status
     set -l pcolor $bpurple
@@ -72,7 +71,7 @@ function fish_prompt
     end
 
     # Top
-    echo -n $bred"["$byellow"$USER"$bgreen"@"$bblue"$__fish_prompt_hostname"$bred"]"$bnormal $bred(prompt_pwd)$normal(fish_vcs_prompt)
+    echo -n $bred"["$byellow"$USER"$bgreen"@"$bblue"$__fish_prompt_hostname"$bred"]"$bnormal $bred(prompt_pwd) $normal(fish_vcs_prompt)
 
     # Bottom
     echo -e "\n$__fish_prompt_char $normal"
@@ -81,7 +80,6 @@ end
 ##if status --is-interactive
 ##   source ("/usr/bin/starship" init fish --print-full-init | psub)
 ##end
-
 
 ## Functions
 # Functions needed for !! and !$ https://github.com/oh-my-fish/plugin-bang-bang
@@ -137,7 +135,6 @@ alias l.="exa -a | egrep '^\.'"                                     # show only 
 alias cat='bat --style header --style rules --style snip --style changes --style header'
 alias vim='nvim'
 # Common use
-alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias fixpacman="sudo rm /var/lib/pacman/db.lck"
 alias tarnow='tar -acf '
 alias untar='tar -zxvf '
@@ -164,33 +161,15 @@ alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
 alias jctl="journalctl -p 3 -xb"
 # Recent installed packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
-alias listupdates="sudo pacman -Sy; clear; pacman -Qu"
-alias install="sudo pacman -S"
-alias remove="sudo pacman -Rs"
-## Run colorscript if session is interactive
 function circles 
      # Setup colors
     #Bold Colors
-    set -l bnormal (set_color -o normal)
-    set -l bblack (set_color -o brblack)
     set -l bred (set_color -o brred)
     set -l bgreen (set_color -o brgreen)
     set -l byellow (set_color -o bryellow)
     set -l bblue (set_color -o brblue)
     set -l bmagenta (set_color -o brmagenta)
     set -l bcyan (set_color -o brcyan)
-    set -l bwhite (set_color -o brwhite)
-
-    #Normal Colors
-    set -l normal (set_color normal)
-    set -l black (set_color black)
-    set -l red (set_color red)
-    set -l green (set_color green)
-    set -l yellow (set_color yellow)
-    set -l blue (set_color blue)
-    set -l magenta (set_color magenta)
-    set -l cyan (set_color cyan)
-    set -l white (set_color white)
     echo $bred" "$byellow" "$bgreen" "$bmagenta" "$bblue" "$bcyan" " 
 end
 if status --is-interactive
