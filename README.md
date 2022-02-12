@@ -1,19 +1,58 @@
-# Gnome Catppuccin setup 
-A warm friendly Gnome setup
-# Screenshot
-![img1](assets/out.png)
+<p align="center">
+    <b> My config files for Arch Linux 😽️ </b>
+</p>
 
-- GTK Theme: [Catppuccin](https://github.com/catppuccin/catppuccin)
-- Icons: [Tela](https://github.com/vinceliuice/Tela-icon-theme)
-- E-Book Reader: [Foliate](https://github.com/johnfactotum/foliate)
-    - The theme for foliate is custom made. 
-- Spicetify Theme: [Sleek](https://github.com/morpheusthewhite/spicetify-themes/tree/master/Sleek)
-    - The color scheme of the theme is Elementary.
-- Extensions: 
-    - [Logo Menu](https://github.com/Aryan20/Logomenu)
-    - [Media controls](https://extensions.gnome.org/extension/4470/media-controls/)
-    - [Pop shell](https://github.com/pop-os/shell)
-    - [Floating dock](https://extensions.gnome.org/extension/3730/floating-dock/)
-    - [Dynamic Panel Transparency](https://extensions.gnome.org/extension/1011/dynamic-panel-transparency/)
+<img src="/home/ghost/git-files/Gnome-catppuccin/assets/main.png" align="right" width="350px">
+
+About my setup:
+- OS: Arch Linux
+- DE: Gnome 
+- Shell: Fish shell
+- Terminal: Kitty
+- Colorscheme: [Catppuccin](https://github.com/catppuccin/catppuccin)
+<br>
+<br>
+<br>
+<br>
+<br>
+
+# Application configs: 
+
+## Neovim 
+<img src="/home/ghost/git-files/Gnome-catppuccin/assets/nvim.png" align="right" width="300px">
+
+- [Nvim config](https://github.com/ghostx31/Gnome-catppuccin/tree/main/.config/nvim)
+
+<br>
+<br>  
+
+<br>
+
+<br>
+<br>
+
+## Foliate 
+
+<img src="/home/ghost/git-files/Gnome-catppuccin/assets/foliate.png" width="300px" align="right">
+
+- [Foliate](https://github.com/ghostx31/Gnome-catppuccin/tree/main/.config/com.github.johnfactotum.Foliate)
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Firefox
+<img src="/home/ghost/git-files/Gnome-catppuccin/assets/firefox.png"  align="right" width="300px">
+
+- Based on [cascade](https://github.com/andreasgrafen/cascade): [Config](https://127.0.0.1)
+
+<br>
+<br>
+<br>
+
 
 
