@@ -10,6 +10,7 @@ About my setup:
 - Shell: Fish shell
 - Terminal: Kitty
 - Colorscheme: [Catppuccin](https://github.com/catppuccin/catppuccin)
+- Icons: Tela-dark
 <br>
 <br>
 <br>
