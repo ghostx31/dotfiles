@@ -83,3 +83,6 @@ About my setup:
 <img src="assets/kitty.png" align="right" width="400px">
 
 - [Kitty config](https://github.com/ghostx31/Gnome-catppuccin/tree/main/.config/kitty)
+
+# Todo 
+- Add a bash script to make installation easier. 
