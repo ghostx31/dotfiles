@@ -2,7 +2,7 @@
     <b> My config files for Arch Linux 😽️ </b>
 </p>
 
-<img src="/home/ghost/git-files/Gnome-catppuccin/assets/main.png" align="right" width="350px">
+<img src="assets/main.png" align="right" width="350px">
 
 About my setup:
 - OS: Arch Linux
@@ -19,7 +19,7 @@ About my setup:
 # Application configs: 
 
 ## Neovim 
-<img src="/home/ghost/git-files/Gnome-catppuccin/assets/nvim.png" align="right" width="300px">
+<img src="assets/nvim.png" align="right" width="300px">
 
 - [Nvim config](https://github.com/ghostx31/Gnome-catppuccin/tree/main/.config/nvim)
 
@@ -33,7 +33,7 @@ About my setup:
 
 ## Foliate 
 
-<img src="/home/ghost/git-files/Gnome-catppuccin/assets/foliate.png" width="300px" align="right">
+<img src="assets/foliate.png" width="300px" align="right">
 
 - [Foliate](https://github.com/ghostx31/Gnome-catppuccin/tree/main/.config/com.github.johnfactotum.Foliate)
 
@@ -46,7 +46,7 @@ About my setup:
 <br>
 
 ## Firefox
-<img src="/home/ghost/git-files/Gnome-catppuccin/assets/firefox.png"  align="right" width="300px">
+<img src="assets/firefox.png"  align="right" width="300px">
 
 - Based on [cascade](https://github.com/andreasgrafen/cascade): [Config](https://127.0.0.1)
 
