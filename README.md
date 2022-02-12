@@ -21,7 +21,7 @@ About my setup:
 # Application configs: 
 
 ## Neovim 
-<img src="assets/nvim.png" align="right" width="300px">
+<img src="assets/nvim.png" align="right" width="400px">
 
 - [Nvim config](https://github.com/ghostx31/Gnome-catppuccin/tree/main/.config/nvim)
 
@@ -33,28 +33,52 @@ About my setup:
 <br>
 <br>
 
+<br>
+<br>
+<br>
+<br>
+
 ## Foliate 
 
-<img src="assets/foliate.png" width="300px" align="right">
+<img src="assets/foliate.png" width="400px" align="right">
 
 - [Foliate](https://github.com/ghostx31/Gnome-catppuccin/tree/main/.config/com.github.johnfactotum.Foliate)
 
 
 <br>
+<br>  
+
 <br>
+
+<br>
+<br>
+
 <br>
 <br>
 <br>
 <br>
 
 ## Firefox
-<img src="assets/firefox.png"  align="right" width="300px">
+<img src="assets/firefox.png"  align="right" width="400px">
 
-- Based on [cascade](https://github.com/andreasgrafen/cascade): [Config](https://127.0.0.1)
+- Based on [cascade](https://github.com/andreasgrafen/cascade): [Config](https://github.com/ghostx31/Gnome-catppuccin/tree/main/firefox)
+- Startpage: [Fluidity](https://ghostx31.github.io/fluidity/)
+
+
+
+<br>
+<br>  
+
+<br>
+
+<br>
+<br>
 
 <br>
 <br>
 <br>
 
+## Kitty 
+<img src="assets/kitty.png" align="right" width="400px">
 
-
+- [Kitty config](https://github.com/ghostx31/Gnome-catppuccin/tree/main/.config/kitty)
