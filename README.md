@@ -1,6 +1,7 @@
 <p align="center">
     <b> My config files for Arch Linux 😽️ </b>
 </p>
+<br>
 
 <img src="assets/main.png" align="right" width="350px">
 
