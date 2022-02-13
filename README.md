@@ -22,7 +22,7 @@ About my setup:
 
 # Application configs: 
 
-## Neovim 
+## Neovim 🖊️
 <img src="assets/nvim.png" align="right" width="400px">
 
 - [Nvim config](https://github.com/ghostx31/Gnome-catppuccin/tree/main/.config/nvim)
@@ -40,7 +40,7 @@ About my setup:
 <br>
 <br>
 
-## Foliate 
+## Foliate 📔️ 
 
 <img src="assets/foliate.png" width="400px" align="right">
 
@@ -60,7 +60,7 @@ About my setup:
 <br>
 <br>
 
-## Firefox
+## Firefox 🌐️
 <img src="assets/firefox.png"  align="right" width="400px">
 
 - Based on [cascade](https://github.com/andreasgrafen/cascade): [Config](https://github.com/ghostx31/Gnome-catppuccin/tree/main/firefox)
@@ -80,7 +80,7 @@ About my setup:
 <br>
 <br>
 
-## Kitty 
+## Kitty 💻️ 
 <img src="assets/kitty.png" align="right" width="400px">
 
 - [Kitty config](https://github.com/ghostx31/Gnome-catppuccin/tree/main/.config/kitty)
@@ -97,5 +97,5 @@ About my setup:
 <br>
 <br>
 
-# Todo 
+# Todo 💭️ 
 - Add a bash script to make installation easier. 
