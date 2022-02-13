@@ -1,6 +1,3 @@
-<style>
-        h2 { text-align: center; }
-</style>
 <p align="center">
     <h2>My config files for Arch Linux 😽️ </h2>
 </p>
