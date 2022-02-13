@@ -1,5 +1,5 @@
 <p align="center">
-    <b> My config files for Arch Linux 😽️ </b>
+    <h2> My config files for Arch Linux 😽️ </h2>
 </p>
 <br>
 
