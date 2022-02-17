@@ -21,10 +21,10 @@ About my setup:
 
 # Application configs: 
 
-## Neovim 🖊️
-<img src="assets/nvim.png" align="right" width="400px">
+## LunarVim 🖊️
+<img src="assets/lvim.png" align="right" width="400px">
 
-- [Nvim config](https://github.com/ghostx31/Gnome-catppuccin/tree/main/.config/nvim)
+- [LunarVim config](https://github.com/ghostx31/Gnome-catppuccin/tree/main/.config/lvim)
 
 <br>
 <br>  
