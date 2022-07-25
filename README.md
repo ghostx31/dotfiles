@@ -3,12 +3,12 @@
 </p>
 <br>
 
-<img src="assets/out.png" align="right" width="350px">
+<img src="assets/out.png" align="right" width="400px">
 
 About my setup:
 - OS: Arch Linux
 - DE: Gnome 
-- Shell: Fish shell
+- Shell: Fish 
 - Terminal: Alacritty
 - Colorscheme: [Catppuccin](https://github.com/catppuccin/catppuccin)
 - Icons: Tela-dark
@@ -37,7 +37,7 @@ About my setup:
 ## LunarVim 🖊️
 <img src="assets/lvim.png" align="right" width="400px">
 
-- [LunarVim config](https://github.com/ghostx31/Gnome-catppuccin/tree/main/.config/lvim)
+- [LunarVim config](https://github.com/ghostx31/dotfiles/tree/main/.config/lvim)
 
 <br>
 <br>  
@@ -56,7 +56,7 @@ About my setup:
 
 <img src="assets/foliate.png" width="400px" align="right">
 
-- [Foliate](https://github.com/ghostx31/Gnome-catppuccin/tree/main/.config/com.github.johnfactotum.Foliate)
+- [Foliate](https://github.com/ghostx31/dotfiles/tree/main/.config/com.github.johnfactotum.Foliate/themes.json)
 
 
 <br>
@@ -75,8 +75,8 @@ About my setup:
 ## Firefox 🌐️
 <img src="assets/firefox.png"  align="right" width="400px">
 
-- Based on [cascade](https://github.com/andreasgrafen/cascade): [Config](https://github.com/ghostx31/Gnome-catppuccin/tree/main/firefox)
-- Startpage: [Dawm](https://ghostx31.github.io/dawn/)
+- Based on [cascade](https://github.com/andreasgrafen/cascade): [Config](https://github.com/ghostx31/dotfiles/tree/main/firefox)
+- Startpage: [Dawn](https://ghostx31.github.io/dawn/)
 
 
 
