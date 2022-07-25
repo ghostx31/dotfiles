@@ -3,13 +3,13 @@
 </p>
 <br>
 
-<img src="assets/main.png" align="right" width="350px">
+<img src="assets/out.png" align="right" width="350px">
 
 About my setup:
 - OS: Arch Linux
 - DE: Gnome 
 - Shell: Fish shell
-- Terminal: Kitty
+- Terminal: Alacritty
 - Colorscheme: [Catppuccin](https://github.com/catppuccin/catppuccin)
 - Icons: Tela-dark
 <br>
@@ -17,6 +17,9 @@ About my setup:
 <br>
 <br>
 <br>
+<br>
+<br>
+&nbsp;
 
 
 # Application configs: 
@@ -63,7 +66,7 @@ About my setup:
 <img src="assets/firefox.png"  align="right" width="400px">
 
 - Based on [cascade](https://github.com/andreasgrafen/cascade): [Config](https://github.com/ghostx31/Gnome-catppuccin/tree/main/firefox)
-- Startpage: [Fluidity](https://ghostx31.github.io/fluidity/)
+- Startpage: [Dawm](https://ghostx31.github.io/dawn/)
 
 
 
@@ -79,22 +82,7 @@ About my setup:
 <br>
 <br>
 
-## Kitty 💻️ 
-<img src="assets/kitty.png" align="right" width="400px">
+## Alacritty 💻️ 
+<img src="assets/alacritty.png" align="right" width="400px">
 
-- [Kitty config](https://github.com/ghostx31/Gnome-catppuccin/tree/main/.config/kitty)
-<br>
-<br>  
-
-<br>
-
-<br>
-<br>
-
-<br>
-<br>
-<br>
-<br>
-
-# Todo 💭️ 
-- Add a bash script to make installation easier. 
+- [Alacritty config](https://github.com/ghostx31/dotfiles/tree/main/.config/alacritty.yml)

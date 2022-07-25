@@ -1,14 +1,21 @@
-TERM: xterm-256colors
+# TERM: xterm-256colors
+env:
+  TERM: alacritty
 
+cursor:
+  style:
+    shape: Beam
+
+live_config_reload: true
 window:
   dimensions:
-    columns: 105  
-    lines: 30
-  padding: 
-    x: 5
-    y: 5
+    columns: 80  
+    lines: 20
+  padding:
+    x: 10
+    y: 10
   dynamic_padding: true
-  #decorations: none
+  decorations: Full
   title: ghost@archlinux 
   dynamic_title: false 
 title: Alacritty
@@ -18,18 +25,22 @@ class:
 
 draw_bold_text_with_bright_colors: true
 
+scrolling:
+  history: 10000
+  multiplier: 3
+
 font:
   normal:
-    family: Roboto Mono
+    family: CartographCF Nerd Font
     style: Regular
   bold:
-    family: Roboto Mono 
+    family: CartographCF Nerd Font  
     style: Bold
   italic:
-    family: Roboto Mono 
+    family: CartographCF Nerd Font
     style: Italic
   bold_italic: 
-    family: Roboto Mono  
+    family: CartographCF Nerd Font 
     style: Bold Italic 
 
   size: 13
@@ -71,6 +82,7 @@ colors:
   indexed_colors:
     - { index: 16, color: '0xF8BD96' }
     - { index: 17, color: '0xF5E0DC' }
+
 key_bindings:
   - { key: Return,    mods: Control|Shift, action: SpawnNewInstance            }
   - { key: V,         mods: Control|Shift, action: Paste                       }
