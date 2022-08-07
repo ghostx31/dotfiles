@@ -13,7 +13,7 @@ export LANG="en_US.UTF-8"
 ## Environment setup
 # Apply .profile
 #source ~/.profile
-export BAT_THEME="Mocha"
+
 # Add ~/.local/bin to PATH
 if test -d ~/.local/bin
     if not contains -- ~/.local/bin $PATH
