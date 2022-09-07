@@ -1,0 +1,54 @@
+" vim:ft=vim:fenc=utf-8:fdm=marker
+""" map leader to <space> ----------------------------------------------------
+let mapleader=" "
+""" Stolen shamelessly from winston, ofc
+""" emulated plugins
+" use 'c|d|yia' to c|d|y inner arguments
+set argtextobj
+" enable gcc / gc+motion to toggle comments
+set commentary
+" jump around text easier, with <space> as leader
+set highlightedyank
+" vim navigation for the dir tree view
+set NERDTree
+set ReplaceWithRegister
+set surround
+set textobj-entire
+
+""" Common settings ----------------------------------------------------------
+" '_' is a word separator
+set iskeyword-=_
+set relativenumber
+set number
+set nu
+" scroll offset
+set scrolloff=5
+set sidescrolloff=5
+" don't use Ex mode, use Q for formatting.
+map Q gq
+imap jj <Esc>
+""" IDEA-specific settings ---------------------------------------------------
+set ideamarks
+set ideajoin
+set ideastatusicon=gray
+
+""" Mappings -----------------------------------------------------------------
+" IDEA binds
+map <leader>a <Action>(Annotate)
+map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
+map <leader>r <Action>(RenameElement)
+map <leader>z <Action>(ToggleDistractionFreeMode)
+
+" plugin binds
+map <C-N> :NERDTreeToggle<CR>
+
+" easier split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>

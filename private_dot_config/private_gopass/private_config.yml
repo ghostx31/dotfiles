@@ -1,0 +1,11 @@
+autoclip: false
+autoimport: false
+cliptimeout: 45
+exportkeys: true
+nopager: false
+notifications: true
+parsing: true
+path: /home/ghost/secrets/catppuccin
+safecontent: false
+mounts:
+    sub: /home/ghost/.local/share/gopass/stores/sub
