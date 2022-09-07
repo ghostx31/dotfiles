@@ -23,8 +23,7 @@ About my setup:
 <br>  
 <br>  
 
-
-
+> :warning: **I am now using chezmoi to store my encrypted secrets as well and thus can be decrypted with only my PGP key. If you perform `chezmoi apply`, you risk losing your `~/.ssh` and `~/.gnupg`. Do not apply these dots if you're not me!**
 
 # Application configs: 
 
