@@ -1,0 +1,291 @@
+# Get editor completions based on the config schema
+'$schema' = 'https://starship.rs/config-schema.json'
+
+### MAIN SHELL
+# directory | username@hostname | cmd duration | sudo | VCS | language versions | kubernetes
+# > input after line break
+format = """
+$username\
+$hostname\
+$directory\
+$container\
+$sudo\
+$shlvl\
+$vcsh\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$cmd_duration\
+$status\
+$fill\
+$package\
+$buf\
+$c\
+$cmake\
+$cobol\
+$conda\
+$crystal\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$haskell\
+$helm\
+$java\
+$julia\
+$kotlin\
+$lua\
+$nim\
+$nix_shell\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$red\
+$rlang\
+$ruby\
+$rust\
+$scala\
+$spack\
+$swift\
+$vlang\
+$vagrant\
+$zig\
+$aws\
+$azure\
+$gcloud\
+$openstack\
+$docker_context\
+$kubernetes\
+$terraform\
+$line_break\
+$shell\
+$character"""
+add_newline = true
+
+[character]
+success_symbol = '[ﬦ](bold blue) '
+error_symbol = '[ﬦ](bold blue) '
+vicmd_symbol = '[](bold green) '
+
+[directory]
+style = 'fg:#74c7ec'
+read_only = ' '
+use_os_path_sep = false  # fuck windows :verynice:
+truncate_to_repo = true
+truncation_length = 3
+truncation_symbol = "../"
+
+[directory.substitutions]
+'.config' = ' '
+'Projects' = ' '
+'Desktop' = ' '
+'Documents' = ' '
+'Downloads' = ' '
+'Music' = ' '
+'Pictures' = ' '
+'Work' = ' '
+'git-files' = ' '
+
+[username]
+show_always = true
+style_user = "#a6e3a1 bold"
+# format = '\[[$user]($style)\]'
+format = "[$user]($style)[@](#89b4fa)"
+
+ [hostname]
+ ssh_only = false 
+# ssh_symbol = "🌐 "
+format = "[$hostname]($style) "
+style = "#f38ba8 bold"
+
+[sudo]
+disabled = false
+format = '\[[$symbol]($style)\] '
+style = 'fg:red'
+symbol = ' '
+
+[git_branch]
+symbol = ' '
+format = '\[[$symbol$branch]($style)\]'
+style = 'fg:bright-purple'
+
+[git_status]
+format = ' (\[[$all_status$ahead_behind]($style)\])'
+style = 'fg:bright-purple'
+
+[hg_branch]
+format = '\[[$symbol$branch]($style)\]'
+
+[cmd_duration]
+format = '\[[ﮫ $duration]($style)\] '
+
+[fill]
+symbol = '─'
+style = 'fg:black'
+
+### LANGUAGE VERSION INDICATORS
+[c]
+format = ' \[[$symbol($version(-$name))]($style)\] '
+
+[cmake]
+format = ' \[[$symbol($version)]($style)\] '
+
+[cobol]
+format = '\[[$symbol($version)]($style)\]'
+
+[conda]
+format = '\[[$symbol$environment]($style)\]'
+
+[crystal]
+format = '\[[$symbol($version)]($style)\]'
+
+[dart]
+format = '\[[$symbol($version)]($style)\]'
+
+[deno]
+format = '\[[$symbol($version)]($style)\]'
+
+[dotnet]
+format = '\[[$symbol($version)(🎯 $tfm)]($style)\]'
+
+[elixir]
+format = '\[[$symbol($version \(OTP $otp_version\))]($style)\]'
+
+[elm]
+format = '\[[$symbol($version)]($style)\]'
+
+[erlang]
+format = '\[[$symbol($version)]($style)\]'
+
+[golang]
+symbol = ' '
+format = ' \[[$symbol($version)]($style)\] '
+
+[haskell]
+symbol = ' '
+format = '\[[$symbol($version)]($style)\]'
+
+[helm]
+symbol = 'ﴱ '
+format = '\[[$symbol($version)]($style)\]'
+
+[java]
+symbol = ' '
+format = '\[[$symbol($version)]($style)\]'
+
+[julia]
+format = '\[[$symbol($version)]($style)\]'
+
+[kotlin]
+format = '\[[$symbol($version)]($style)\]'
+
+[lua]
+symbol = ' '
+format = ' \[[$symbol($version)]($style)\] '
+
+[nim]
+format = '\[[$symbol($version)]($style)\]'
+
+[nix_shell]
+format = '\[[$symbol$state( \($name\))]($style)\]'
+
+[nodejs]
+symbol = ' '
+format = ' \[[$symbol($version)]($style)\] '
+detect_extensions = []
+style = 'green'
+
+[ocaml]
+format = '\[[$symbol($version)(\($switch_indicator$switch_name\))]($style)\]'
+
+[package]
+symbol = ' '
+format = ' \[[$symbol$version]($style)\] '
+style = '16'
+
+[perl]
+format = '\[[$symbol($version)]($style)\]'
+
+[php]
+symbol = ' '
+format = '\[[$symbol($version)]($style)\]'
+
+[pulumi]
+format = '\[[$symbol$stack]($style)\]'
+
+[purescript]
+format = ' \[[$symbol($version)]($style)\] '
+
+[python]
+symbol = ' '
+format = ' \[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\] '
+
+[red]
+format = '\[[$symbol($version)]($style)\]'
+
+[ruby]
+symbol = ' '
+format = '\[[$symbol($version)]($style)\]'
+
+[rust]
+symbol = ''
+format = ' \[[$symbol($version)]($style)\] '
+
+[scala]
+format = '\[[$symbol($version)]($style)\]'
+
+[spack]
+format = '\[[$symbol$environment]($style)\]'
+
+[swift]
+symbol = ' '
+format = '\[[$symbol($version)]($style)\]'
+
+[vagrant]
+format = '\[[$symbol($version)]($style)\]'
+
+[vlang]
+format = '\[[$symbol($version)]($style)\]'
+
+[zig]
+format = '\[[$symbol($version)]($style)\]'
+
+### CONTEXT INDICATORS
+[aws]
+# symbol = ' '
+symbol = '   '
+style = "#f38ba8"
+# format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
+format = '[$symbol($profile )[in ]($style)(\($region\) )(\[$duration\] )]($style)'
+# [aws.region_aliases]
+# ap-south-1 = "in"
+
+[docker_context]
+symbol = ' '
+format = ' \[[$symbol$context]($style)\] '
+
+[gcloud]
+symbol = ' '
+format = '\[[$symbol$account(@$domain)(\($region\))]($style)\]'
+
+[kubernetes]
+symbol = ' '
+format = '\[[$symbol($cluster/$namespace)]($style)\]'
+disabled = false
+
+[openstack]
+symbol = ' '
+format = '\[[$symbol$cloud(\($project\))]($style)\]'
+
+[terraform]
+format = '\[[$symbol$workspace]($style)\]'

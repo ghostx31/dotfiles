@@ -1,0 +1,12 @@
+{
+  "themes": [
+    {
+      "theme-name": "Catppuccin",
+      "fg-color": "rgb(205,214,244)",
+      "bg-color": "rgb(30,30,46)",
+      "link-color": "rgb(137,180,250)",
+      "invert": false,
+      "dark-mode": true
+    }
+  ]
+}
