@@ -73,8 +73,7 @@
     
     /* URL colour in URL bar suggestions */
     --urlbar-popup-url-color: var(--uc-identity-color-purple) !important;
-     
-     
+
     /*---+---+---+---+---+---+---+
      | V | I | S | U | A | L | S |
      +---+---+---+---+---+---+---*/
@@ -406,10 +405,10 @@ window,
 .urlbarView-row:hover
     > .urlbarView-row-inner,
 .urlbarView-row[selected]
-    > .urlbarView-row-inner { background: var(--urlbar-popup-url-color) !important; }
-    
-
-
+    > .urlbarView-row-inner { 
+  background: var(--urlbar-popup-url-color) !important; 
+  color: var(--window-colour) !important;  
+}
 
 
 /* transition to oneline */
