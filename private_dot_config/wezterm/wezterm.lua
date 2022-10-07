@@ -13,7 +13,7 @@ local fonts = {
         "ss09=1",
       },
     },
-    size = 13,
+    size = 14,
     font_rules = {
       italics = false,
     },
@@ -21,116 +21,140 @@ local fonts = {
 }
 
 local function get_font(name)
-    return {
-  font = wezterm.font_with_fallback({
-   fonts[name].font,
-   "Apple Color Emoji",
-  }),
-  size = fonts[name].size,
-    }
+  return {
+    font = wezterm.font_with_fallback({
+      fonts[name].font,
+      "Noto Color Emoji",
+    }),
+    size = fonts[name].size,
+  }
 end
 
 local function numberStyle(number, script)
-    local scripts = {
-  superscript = {
-   "\\u2070",
-   "\\u00b9",
-   "\\u00b2",
-   "\\u00b3",
-   "\\u2074",
-   "\\u2075",
-   "\\u2076",
-   "\\u2077",
-   "\\u2078",
-   "\\u2079",
-  },
-  subscript = {
-   "\\u2080",
-   "\\u2081",
-   "\\u2082",
-   "\\u2083",
-   "\\u2084",
-   "\\u2085",
-   "\\u2086",
-   "\\u2087",
-   "\\u2088",
-   "\\u2089",
-  },
-    }
-    local numbers = scripts[script]
-    local number_string = tostring(number)
-    local result = ""
-    for i = 1, #number_string do
-        local char = number_string:sub(i, i)
-        local num = tonumber(char)
-        if num then
-            result = result .. numbers[num + 1]
-        else
-            result = result .. char
-        end
+  local scripts = {
+    superscript = {
+      "\\u2070",
+      "\\u00b9",
+      "\\u00b2",
+      "\\u00b3",
+      "\\u2074",
+      "\\u2075",
+      "\\u2076",
+      "\\u2077",
+      "\\u2078",
+      "\\u2079",
+    },
+    subscript = {
+      "\\u2080",
+      "\\u2081",
+      "\\u2082",
+      "\\u2083",
+      "\\u2084",
+      "\\u2085",
+      "\\u2086",
+      "\\u2087",
+      "\\u2088",
+      "\\u2089",
+    },
+  }
+  local numbers = scripts[script]
+  local number_string = tostring(number)
+  local result = ""
+  for i = 1, #number_string do
+    local char = number_string:sub(i, i)
+    local num = tonumber(char)
+    if num then
+      result = result .. numbers[num + 1]
+    else
+      result = result .. char
     end
-    return result
+  end
+  return result
 end
 
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-    -- local RIGHT_DIVIDER = utf8.char(0xe0bc)
-    local colours = config.resolved_palette.tab_bar
+  local RIGHT_DIVIDER = utf8.char(0xe0bc)
+  local colours = config.resolved_palette.tab_bar
 
-    local active_tab_index = 0
-    for _, t in ipairs(tabs) do
-        if t.is_active == true then
-            active_tab_index = t.tab_index
-        end
+  local active_tab_index = 0
+  for _, t in ipairs(tabs) do
+    if t.is_active == true then
+      active_tab_index = t.tab_index
     end
+  end
 
-    local active_bg = colours.active_tab.bg_color
-    local active_fg = colours.active_tab.fg_color
-    local inactive_bg = colours.inactive_tab.bg_color
-    local inactive_fg = colours.inactive_tab.fg_color
-    local new_tab_bg = colours.new_tab.bg_color
+  -- local active_bg = colours.active_tab.bg_color
+  local active_bg = config.resolved_palette.ansi[6]
+  local active_fg = colours.background
+  local inactive_bg = colours.inactive_tab.bg_color
+  local inactive_fg = colours.inactive_tab.fg_color
+  local new_tab_bg = colours.new_tab.bg_color
 
-    local s_bg, s_fg, e_bg, e_fg
+  local s_bg, s_fg, e_bg, e_fg
 
-    if tab.tab_index == #tabs - 1 then
-        if tab.is_active then
-            s_bg = active_bg
-            s_fg = active_fg
-            e_bg = new_tab_bg
-            e_fg = active_bg
-        else
-            s_bg = inactive_bg
-            s_fg = inactive_fg
-            e_bg = new_tab_bg
-            e_fg = inactive_bg
-        end
-    elseif tab.tab_index == active_tab_index - 1 then
-        s_bg = inactive_bg
-        s_fg = inactive_fg
-        e_bg = active_bg
-        e_fg = inactive_bg
-    elseif tab.is_active then
-        s_bg = active_bg
-        s_fg = active_fg
-        e_bg = inactive_bg
-        e_fg = active_bg
+  if tab.tab_index == #tabs - 1 then
+    if tab.is_active then
+      s_bg = active_bg
+      s_fg = active_fg
+      e_bg = new_tab_bg
+      e_fg = active_bg
     else
-        s_bg = inactive_bg
-        s_fg = inactive_fg
-        e_bg = inactive_bg
-        e_fg = inactive_bg
+      s_bg = inactive_bg
+      s_fg = inactive_fg
+      e_bg = new_tab_bg
+      e_fg = inactive_bg
+    end
+  elseif tab.tab_index == active_tab_index - 1 then
+    s_bg = inactive_bg
+    s_fg = inactive_fg
+    e_bg = active_bg
+    e_fg = inactive_bg
+  elseif tab.is_active then
+    s_bg = active_bg
+    s_fg = active_fg
+    e_bg = inactive_bg
+    e_fg = active_bg
+  else
+    s_bg = inactive_bg
+    s_fg = inactive_fg
+    e_bg = inactive_bg
+    e_fg = inactive_bg
+  end
+
+  wezterm.on('update-status', function(window, pane)
+    local palette = window:effective_config().resolved_palette
+    local firstTabActive = window:mux_window():tabs_with_info()[1].is_active
+
+    local RIGHT_DIVIDER = utf8.char(0xe0b0)
+    local text = '   '
+
+    if window:leader_is_active() then
+      text = '   '
     end
 
-    local muxpanes = wezterm.mux.get_tab(tab.tab_id):panes()
-    local count = #muxpanes == 1 and "" or #muxpanes
+    local divider_bg = firstTabActive and palette.ansi[6] or palette.tab_bar.inactive_tab.bg_color
 
-    return {
-  { Background = { Color = s_bg } },
-  { Foreground = { Color = s_fg } },
-  { Text = " " .. tab.tab_index + 1 .. ": " .. tab.active_pane.title .. numberStyle(count, "superscript") .. " " },
-  { Background = { Color = e_bg } },
-  { Foreground = { Color = e_fg } },
-  { Text = RIGHT_DIVIDER },
-    }
+    window:set_left_status(wezterm.format({
+      { Foreground = { Color = palette.background } },
+      { Background = { Color = palette.ansi[5] } },
+      { Text = text },
+      { Background = { Color = divider_bg } },
+      { Foreground = { Color = palette.ansi[5] } },
+      { Text = RIGHT_DIVIDER },
+    }))
+  end)
+
+  local muxpanes = wezterm.mux.get_tab(tab.tab_id):panes()
+  local count = #muxpanes == 1 and "" or #muxpanes
+
+  return {
+    { Background = { Color = s_bg } },
+    { Foreground = { Color = s_fg } },
+    { Text = " " .. tab.tab_index + 1 .. ": " .. tab.active_pane.title .. numberStyle(count, "superscript") .. " " },
+    { Background = { Color = e_bg } },
+    { Foreground = { Color = e_fg } },
+    { Text = RIGHT_DIVIDER },
+  }
 end)
 
 local window_padding = {
@@ -141,11 +165,11 @@ local window_padding = {
 }
 
 local function scheme_for_appearance(appearance)
-    if appearance:find("Dark") then
-        return "Catppuccin Mocha"
-    else
-        return "Catppuccin Latte"
-    end
+  if appearance:find("Dark") then
+    return "Catppuccin Mocha"
+  else
+    return "Catppuccin Latte"
+  end
 end
 
 local font = get_font("cartograph")
@@ -193,13 +217,29 @@ return {
     { key = "z", mods = "LEADER", action = "TogglePaneZoomState" },
     -- 'v' to visually select in the current pane
     { key = "v", mods = "LEADER", action = "ActivateCopyMode" },
+    { key = ' ', mods = "LEADER", action = act.QuickSelect },
+    {
+      key = 'o',
+      mods = "LEADER",
+      action = wezterm.action.QuickSelectArgs {
+        label = 'open url',
+        patterns = {
+          'https?://\\S+'
+        },
+        action = wezterm.action_callback(function(window, pane)
+          local url = window:get_selection_text_for_pane(pane)
+          wezterm.log_info('opening: ' .. url)
+          wezterm.open_with(url)
+        end),
+      },
+    },
   },
   font = font.font,
   font_size = font.size,
   font_rules = fonts.font_rules,
   use_fancy_tab_bar = false,
   tab_bar_at_bottom = true,
-  hide_tab_bar_if_only_one_tab = true,
+  hide_tab_bar_if_only_one_tab = false,
   tab_max_width = 50,
 
   window_decorations = "RESIZE",

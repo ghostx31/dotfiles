@@ -3528,7 +3528,6 @@ StScrollBar StButton#hhandle:active {
 #dashtodockContainer .metro .overview-icon {
   border-radius: 0;
 }
-
 .dashtodock-app-well-preview-menu-item {
   padding: 1em 1em 0.5em 1em;
 }
@@ -3611,7 +3610,7 @@ StScrollBar StButton#hhandle:active {
 #panel:overview .panel-button.clock-display:hover,
 #panel:overview .panel-button:hover {
   background: #f38ba8;
-  color: #1e1e2e !important;
+  color:  #45475a!important;
   border-radius: 0;
   margin: 5px 10px;
   border-radius: 5px;
@@ -3641,7 +3640,7 @@ StScrollBar StButton#hhandle:active {
 
 #panel .panel-button#panelActivities {
   background: #f9e2af !important;
-  color: #1e1e2e !important;
+  color: #1a222c !important;
 }
 
 #panel *:hover {
