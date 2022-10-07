@@ -68,7 +68,7 @@
 <img src="assets/firefox.png"  align="right" width="400px">
 
 - Based on [cascade](https://github.com/andreasgrafen/cascade): [Config](https://github.com/ghostx31/dotfiles/tree/main/firefox)
-- Startpage: [Dawn](https://ghostx31.github.io/dawn/)
+- Startpage: [Dawn](https://dawn.spookyintheam.codes/)
 
 
 
@@ -87,4 +87,4 @@
 ## WezTerm 💻️ 
 <img src="assets/wezterm.png" align="right" width="400px">
 
-- [Alacritty config](https://github.com/ghostx31/dotfiles/tree/main/private_dot_config/alacritty.yml)
+- [WezTerm config](https://github.com/ghostx31/dotfiles/tree/main/private_dot_config/wezterm/wezterm.lua)
