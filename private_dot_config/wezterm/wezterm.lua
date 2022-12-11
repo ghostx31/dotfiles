@@ -85,7 +85,8 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 
   -- local active_bg = colours.active_tab.bg_color
   local active_bg = config.resolved_palette.ansi[6]
-  local active_fg = colours.background
+  -- local active_fg = colours.background
+  local active_fg = "#000000"
   local inactive_bg = colours.inactive_tab.bg_color
   local inactive_fg = colours.inactive_tab.fg_color
   local new_tab_bg = colours.new_tab.bg_color
@@ -121,28 +122,6 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
     e_fg = inactive_bg
   end
 
-  wezterm.on('update-status', function(window, pane)
-    local palette = window:effective_config().resolved_palette
-    local firstTabActive = window:mux_window():tabs_with_info()[1].is_active
-
-    local RIGHT_DIVIDER = utf8.char(0xe0b0)
-    local text = '   '
-
-    if window:leader_is_active() then
-      text = '   '
-    end
-
-    local divider_bg = firstTabActive and palette.ansi[6] or palette.tab_bar.inactive_tab.bg_color
-
-    window:set_left_status(wezterm.format({
-      { Foreground = { Color = palette.background } },
-      { Background = { Color = palette.ansi[5] } },
-      { Text = text },
-      { Background = { Color = divider_bg } },
-      { Foreground = { Color = palette.ansi[5] } },
-      { Text = RIGHT_DIVIDER },
-    }))
-  end)
 
   local muxpanes = wezterm.mux.get_tab(tab.tab_id):panes()
   local count = #muxpanes == 1 and "" or #muxpanes
@@ -157,16 +136,46 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   }
 end)
 
+wezterm.on('update-status', function(window, pane)
+  local palette = window:effective_config().resolved_palette
+  local firstTabActive = window:mux_window():tabs_with_info()[1].is_active
+
+  local RIGHT_DIVIDER = utf8.char(0xe0b0)
+  local text = '   '
+
+  if window:leader_is_active() then
+    text = '   '
+  end
+
+  local divider_bg = firstTabActive and palette.ansi[6] or palette.tab_bar.inactive_tab.bg_color
+
+  window:set_left_status(wezterm.format({
+    { Foreground = { Color = "#000000" } },
+    { Background = { Color = palette.ansi[5] } },
+    { Text = text },
+    { Background = { Color = divider_bg } },
+    { Foreground = { Color = palette.ansi[5] } },
+    { Text = RIGHT_DIVIDER },
+  }))
+end)
+
 local window_padding = {
-  left = 5,
-  right = 5,
-  top = 5,
-  bottom = 5,
+  left = 10,
+  right = 10,
+  top = 10,
+  bottom = 10,
 }
 
+local custom = wezterm.color.get_builtin_schemes()["Catppuccin Mocha"]
+custom.background = "#000000"
+custom.tab_bar.background = "#040404"
+custom.tab_bar.inactive_tab.bg_color = "#0f0f0f"
+custom.tab_bar.new_tab.bg_color = "#080808"
+
+local darkTheme = "OLEDppuccin"
 local function scheme_for_appearance(appearance)
   if appearance:find("Dark") then
-    return "Catppuccin Mocha"
+    return darkTheme
   else
     return "Catppuccin Latte"
   end
@@ -176,7 +185,7 @@ local font = get_font("cartograph")
 local act = wezterm.action
 return {
   disable_default_key_bindings = false,
-  leader = { key = "m", mods = "CTRL", timeout_milliseconds = 5002 },
+  leader = { key = "a", mods = "CTRL", timeout_milliseconds = 5002 },
   keys = {
     {
       key = "\\",
@@ -244,10 +253,13 @@ return {
 
   window_decorations = "RESIZE",
   window_padding = window_padding,
+  color_schemes = {
+    ["OLEDppuccin"] = custom,
+  },
   color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
   clean_exit_codes = { 130 },
   audible_bell = "Disabled",
-  initial_rows = 25,
-  initial_cols = 80,
-  cursor_thickness = "2pt",
+  initial_rows = 20,
+  initial_cols = 70,
+  cursor_thickness = "2",
 }
