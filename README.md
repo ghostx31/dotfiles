@@ -10,7 +10,7 @@
 - DE: Gnome 
 - Shell: Fish 
 - Terminal: Alacritty
-- Colorscheme: [Catppuccin](https://github.com/catppuccin/catppuccin)
+- Colorscheme: [Catppuccin Mocha with OLED colours](https://github.com/catppuccin/catppuccin)
 - Icons: Tela-dark
 
 ### Extensions I use: 
