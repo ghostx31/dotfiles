@@ -3,7 +3,7 @@
     {
       "theme-name": "Catppuccin Mocha",
       "fg-color": "rgb(205,214,244)",
-      "bg-color": "rgb(30,30,46)",
+      "bg-color": "rgb(0,0,0)",
       "link-color": "rgb(245, 224, 220)",
       "invert": false,
       "dark-mode": true
