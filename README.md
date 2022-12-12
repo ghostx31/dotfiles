@@ -12,6 +12,7 @@
 - Terminal: Alacritty
 - Colorscheme: [Catppuccin Mocha with OLED colours](https://github.com/catppuccin/catppuccin)
 - Icons: Tela-dark
+- GTK theme: Catppuccin but modified with [OLEDppuccin colours](https://github.com/ghostx31/gtk) - WIP
 
 ### Extensions I use: 
 - [BaBar](https://extensions.gnome.org/extension/4000/babar/)
