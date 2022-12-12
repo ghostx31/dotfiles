@@ -3,7 +3,7 @@
 </p>
 <br>
 
-<img src="assets/out.png" align="right" width="400px">
+<img src="assets/screenshot.png" align="right" width="400px">
 
 ### About my setup:
 - OS: Arch Linux
@@ -20,7 +20,6 @@
 - [Logo Menu](https://extensions.gnome.org/extension/4451/logo-menu/)
 - [Media Controls](https://extensions.gnome.org/extension/4470/media-controls/)
 - [Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)
-- [Dash to Dock for Cosmic](https://extensions.gnome.org/extension/5004/dash-to-dock-for-cosmic/)
 <br>
 
  
@@ -68,7 +67,7 @@
 <img src="assets/firefox.png"  align="right" width="400px">
 
 - Based on [cascade](https://github.com/andreasgrafen/cascade): [Config](https://github.com/ghostx31/dotfiles/tree/main/firefox)
-- Startpage: [Dawn](https://dawn.spookyintheam.codes/)
+- Startpage: [Dawn](https://github.com/ghostx31/dawn)
 
 
 
@@ -88,3 +87,23 @@
 <img src="assets/wezterm.png" align="right" width="400px">
 
 - [WezTerm config](https://github.com/ghostx31/dotfiles/tree/main/private_dot_config/wezterm/wezterm.lua)
+
+
+
+
+<br>
+<br>  
+
+<br>
+
+<br>
+<br>
+
+<br>
+<br>
+<br>
+
+## Spicetify
+<img src="assets/spicetify.png" align="right" width="400px">
+
+- [Spicetify](https://github.com/ghostx31/spicetify-oledppuccin)
