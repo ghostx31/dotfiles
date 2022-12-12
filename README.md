@@ -67,7 +67,7 @@
 ## Firefox 🌐️
 <img src="assets/firefox.png"  align="right" width="400px">
 
-- Based on [cascade](https://github.com/andreasgrafen/cascade): [Config](https://github.com/ghostx31/dotfiles/tree/main/firefox)
+- Based on [cascade](https://github.com/andreasgrafen/cascade): [Config](https://github.com/ghostx31/dotfiles/blob/main/private_dot_mozilla/private_firefox/private_qlzlnrcj.default-release/chrome/userChrome.css)
 - Startpage: [Dawn](https://github.com/ghostx31/dawn)
 
 
