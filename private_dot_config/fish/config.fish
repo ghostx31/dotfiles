@@ -9,9 +9,10 @@ set -U __done_notification_urgency_level low
 set -Ux DIFFPROG (which lvim)
 export EDITOR=(which lvim)
 export LC_MESSAGES="C"
-export LANG="en_US.UTF-8"
+# export LANG="en_US.UTF-8"
+export GDM_LANG="en_US.UTF-8"
 export QT_QPA_PLATFORM="wayland"
-#export ORG_OVERRIDE="catppuccin-rfc"
+export ORG_OVERRIDE="catppuccin-rfc"
 ## Environment setup
 # Apply .profile
 #source ~/.profile
@@ -33,6 +34,8 @@ if [ $XDG_SESSION_TYPE = "wayland" ]
 else
   export MOZ_USE_XINPUT2=1
 end
+
+export LS_COLORS="(vivid generate catppuccin-mocha)"
 # function fish_prompt
 #     # Setup colors
 #     #Bold Colors
@@ -46,16 +49,6 @@ end
 #     set -l bcyan (set_color -o brcyan)
 #     set -l bwhite (set_color -o brwhite)
 
-#     #Normal Colors
-#     set -l normal (set_color normal)
-#     set -l black (set_color black)
-#     set -l red (set_color red)
-#     set -l green (set_color green)
-#     set -l yellow (set_color yellow)
-#     set -l blue (set_color blue)
-#     set -l magenta (set_color magenta)
-#     set -l cyan (set_color cyan)
-#     set -l white (set_color white)
 
 #     set -g fish_prompt_pwd_dir_length 0
 #     # Cache exit status
@@ -70,7 +63,8 @@ end
 #             case 0
 #                 set -g __fish_prompt_char \u276f\u276f
 #             case '*'
-#                 set -g __fish_prompt_char $bgreen''$bmagenta''$bred''$byellow''$bblue''$bcyan''
+#                 # set -g __fish_prompt_char $bgreen''$bmagenta''$bred''$byellow''$bblue''$bcyan''
+#                 set -g __fish_prompt_char 
 #         end
 #     end
 
@@ -90,10 +84,10 @@ end
 #     # Bottom
 #     echo -e "\n$__fish_prompt_char $normal"
 # end
-## Starship prompt
+  
+# Starship prompt
 if status --is-interactive
-# # ##   source ("/usr/bin/starship" init fish --print-full-init | psub)
-  starship init fish | source
+ starship init fish | source
 end
 
 ## Functions
@@ -145,7 +139,7 @@ alias la='exa -a --color=always --group-directories-first --icons'  # all files 
 alias ll='exa -l --color=always --group-directories-first --icons'  # long format
 alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
 alias l.="exa -a | egrep '^\.'"                                     # show only dotfiles
-
+alias nvl="neovide-lunarvim"
 # Replace some more things with better alternatives
 alias cat='bat --style header --style snip --style changes --style header'
 # Common use
@@ -173,7 +167,8 @@ function circles
     set -l bblue (set_color -o brblue)
     set -l bmagenta (set_color -o brmagenta)
     set -l bcyan (set_color -o brcyan)
-    echo $bred" "$byellow" "$bgreen" "$bmagenta" "$bblue" "$bcyan" " 
+    # echo $bred" "$byellow" "$bgreen" "$bmagenta" "$bblue" "$bcyan" " 
+    echo $bred" "$byellow" "$bgreen" "$bmagenta" "$bblue" "$bcyan" " 
 end
 if status --is-interactive
   circles
