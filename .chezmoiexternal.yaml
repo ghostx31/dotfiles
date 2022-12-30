@@ -1,0 +1,6 @@
+.doom.d/themes/emacs:
+  type: "archive"
+  url: "https://github.com/catppuccin/emacs/archive/main.tar.gz"
+  stripComponents: 1
+  include: ["**/*.el"]
+  refreshPeriod: 168h
