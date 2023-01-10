@@ -51,7 +51,7 @@
 
 <img src="assets/foliate.png" width="400px" align="right">
 
-- [Foliate](https://github.com/ghostx31/dotfiles/tree/main/privat_dot_config/com.github.johnfactotum.Foliate/themes.json)
+- [Foliate](https://github.com/ghostx31/dotfiles/tree/main/private_dot_config/com.github.johnfactotum.Foliate)
 
 
 <br>
