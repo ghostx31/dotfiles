@@ -1,0 +1,6 @@
+[mounts]
+	path = /home/ghost/.local/share/gopass/stores/ghostx31
+[recipients]
+	hash = d89b25348d11d3c3ce36ec3a5f1545d659bf0e395c9b2b0f1259efbda5eb9e35
+[mounts "catppuccin"]
+	path = /home/ghost/.local/share/gopass/stores/catppuccin
