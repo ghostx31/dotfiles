@@ -1,8 +1,3 @@
-.doom.d/themes:
-  type: "file"
-  url: "https://raw.githubusercontent.com/catppuccin/emacs/main/catppuccin-theme.el"
-  refreshPeriod: 168h
-
 .config/btop/themes/catppuccin_mocha.theme:
   type: "file"
   url: "https://raw.githubusercontent.com/catppuccin/btop/main/catppuccin_mocha.theme"
