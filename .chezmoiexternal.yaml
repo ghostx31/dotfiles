@@ -1,6 +1,14 @@
-.doom.d/themes/emacs:
-  type: "archive"
-  url: "https://github.com/catppuccin/emacs/archive/main.tar.gz"
-  stripComponents: 1
-  include: ["**/*.el"]
+.doom.d/themes:
+  type: "file"
+  url: "https://raw.githubusercontent.com/catppuccin/emacs/main/catppuccin-theme.el"
+  refreshPeriod: 168h
+
+.config/btop/themes/catppuccin_mocha.theme:
+  type: "file"
+  url: "https://raw.githubusercontent.com/catppuccin/btop/main/catppuccin_mocha.theme"
+  refreshPeriod: 168h
+
+.config/bat/themes/Catppuccin-mocha.tmTheme:
+  type: "file"
+  url: "https://raw.githubusercontent.com/catppuccin/bat/main/Catppuccin-mocha.tmTheme"
   refreshPeriod: 168h
