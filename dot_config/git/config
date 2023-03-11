@@ -1,0 +1,39 @@
+[user]
+  name = ghostx31
+  email = himanshu312001@gmail.com
+  signingKey = 016DA1597790CD22
+
+[init]  
+  defaultBranch = main
+
+[commit]
+  gpgSign = true
+
+[tag]
+  gpgSign = true
+
+[grep]
+  lineNumber = true
+
+[push]
+  default = current 
+  gpgSign = "if-asked"
+
+[filter "lfs"]
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  diff = git-lfs diff -- %f
+
+[core]
+  autocrlf = input
+  pager = diff-so-fancy | less --tabs=4 -RFX
+  editor = lvim
+
+[interactive]
+  diffFilter = diff-so-fancy --patch
+
+[alias]
+  upd = "!git remote update -p; git merge --ff-only @{u}"
+  yolo = !git commit -m \"chore: ${curl -s whatthecommit.com/index.txt}\" # Courtesy winston
