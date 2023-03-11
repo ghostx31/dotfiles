@@ -7,3 +7,13 @@
   type: "file"
   url: "https://raw.githubusercontent.com/catppuccin/bat/main/Catppuccin-mocha.tmTheme"
   refreshPeriod: 168h
+
+".config/fish/themes/Catppuccin Mocha.theme":
+  type: "file"
+  url: "https://raw.githubusercontent.com/catppuccin/fish/main/themes/Catppuccin%20Mocha.theme"
+  refreshPeriod: 24h
+
+".config/fish/themes/Catppuccin Latte.theme":
+  type: "file"
+  url: "https://raw.githubusercontent.com/catppuccin/fish/main/themes/Catppuccin%20Latte.theme"
+  refreshPeriod: 24h

@@ -1,26 +1,21 @@
-# Get editor completions based on the config schema
 "$schema" = "https://starship.rs/config-schema.json"
 
-### MAIN SHELL
-# directory | username@hostname | cmd duration | sudo | VCS | language versions | kubernetes
-# > input after line break
 format = """
 [](fg:red)\
-[](bg:red)\
 $directory\
 $username\
 $hostname\
 $container\
 $sudo\
 $shlvl\
-[](fg:red bg:16)\
+[](fg:red bg:peach)\
 $vcsh\
 $git_branch\
 $git_commit\
 $git_state\
-$git_metrics\
 $git_status\
-[](fg:16 bg:yellow)\
+$git_metrics\
+[](fg:peach bg:yellow)\
 $cmd_duration\
 $status\
 [](fg:yellow bg:green)\
@@ -32,32 +27,20 @@ $nodejs\
 $php\
 $python\
 $rust\
-$vagrant\
 [](fg:green bg:blue)\
 $package\
-[](fg:blue bg:purple)\
-$aws\
+$nix_shell\
+[](fg:blue bg:mauve)\
 $azure\
-$gcloud\
-$openstack\
 $docker_context\
 $kubernetes\
-$terraform\
-[](fg:purple)\
+[](fg:mauve)\
 $line_break\
 $shell\
 $character"""
+
 add_newline = true
-
-[custom.left]
-symbol = ""
-style = "fg:bright-purple"
-when = true
-
-[custom.right]
-symbol = ""
-style = "fg:bright-purple"
-when = true
+palette = "catppuccin_mocha"
 
 [directory]
 format = "[$path]($style)[$read_only]($read_only_style)"
@@ -66,14 +49,14 @@ read_only = ''
 use_os_path_sep = false
 
 [username]
-format = '[$user]($style)'
+format = '[ $user]($style)'
 style_root = 'bg:red fg:#000000'
 style_user = 'bg:red fg:#000000'
 
 [hostname]
-format = '[$ssh_symbol$hostname]($style)'
+format = '[$ssh_symbol$hostname ]($style)'
 style = 'bg:red fg:#000000'
-ssh_symbol = ' '
+ssh_symbol = '@'
 
 [container]
 format = '[$hostname]($style)'
@@ -92,21 +75,27 @@ style = 'bg:red fg:#000000'
 [git_branch]
 symbol = ' '
 format = '[$symbol$branch]($style)'
-style = 'bg:16 fg:#000000'
+style = 'bg:peach fg:#000000'
 
 [hg_branch]
 format = '[$symbol$branch]($style)'
-style = 'bg:16 fg:#000000'
+style = 'bg:peach fg:#000000'
 
 [git_commit]
 format = '[\($hash$tag\)]($style)'
 tag_disabled = false
 tag_symbol = '  '
-style = 'bg:16 fg:#000000'
+style = 'bg:peach fg:#000000'
 
 [git_state]
 format = '[\($state( $progress_current/$progress_total)\)]($style)'
-style = 'bg:16 fg:#000000'
+style = 'bg:peach fg:#000000'
+
+[git_metrics]
+format = '([ +$added]($added_style)[/](bg:peach fg:#000000)[-$deleted]($deleted_style))'
+added_style = 'bg:peach fg:#000000'
+deleted_style = 'bg:peach fg:#000000'
+disabled = false
 
 [git_status]
 format = '([ $all_status$ahead_behind]($style))'
@@ -120,11 +109,13 @@ renamed = "»"
 untracked = "+"
 staged = "●"
 stashed = "ﮅ "
-style = 'bg:16 fg:#000000'
+style = 'bg:peach fg:#000000'
 
 [cmd_duration]
 format = '[ﮫ $duration]($style)'
 style = 'bg:yellow fg:#000000'
+show_milliseconds = false
+min_time = 300000
 
 [status]
 style = 'bg:yellow fg:#000000'
@@ -213,12 +204,11 @@ style = 'bg:green fg:#000000'
 
 [nix_shell]
 format = '[ $symbol$state( \($name\)) ]($style)'
-style = 'bg:green fg:#000000'
+symbol = ' '
+style = 'bg:blue fg:#000000'
 
 [nodejs]
-symbol = ' '
 format = '[ $symbol($version) ]($style)'
-detect_extensions = []
 style = 'bg:green fg:#000000'
 
 [ocaml]
@@ -297,32 +287,32 @@ style = 'bg:blue fg:#000000'
 [aws]
 symbol = ' '
 format = '[ $symbol($profile)(\($region\))(\[$duration\]) ]($style)'
-style = 'bg:purple fg:#000000'
+style = 'bg:mauve fg:#000000'
 
 [docker_context]
 symbol = ' '
 format = '[ $symbol$context ]($style)'
-style = 'bg:purple fg:#000000'
+style = 'bg:mauve fg:#000000'
 
 [gcloud]
 symbol = ' '
 format = '[ $symbol$account(@$domain)(\($region\)) ]($style)'
-style = 'bg:purple fg:#000000'
+style = 'bg:mauve fg:#000000'
 
 [kubernetes]
-symbol = ' '
+symbol = '󱃾 '
 format = '[ $symbol($cluster/$namespace) ]($style)'
 disabled = false
-style = 'bg:purple fg:#000000'
+style = 'bg:mauve fg:#000000'
 
 [openstack]
 symbol = ' '
 format = '[ $symbol$cloud(\($project\)) ]($style)'
-style = 'bg:purple fg:#000000'
+style = 'bg:mauve fg:#000000'
 
 [terraform]
 format = '[ $symbol$workspace ]($style)'
-style = 'bg:purple fg:#000000'
+style = 'bg:mauve fg:#000000'
 
 ### STATUS INDICATORS
 
@@ -330,3 +320,59 @@ style = 'bg:purple fg:#000000'
 success_symbol = '[ﬦ](bold cyan)'
 error_symbol = '[ﬦ](bold red)'
 vimcmd_symbol = '[ﬦ](bold cyan)'
+
+[palettes.catppuccin_latte]
+rosewater = "#dc8a78"
+flamingo = "#dd7878"
+pink = "#ea76cb"
+mauve = "#8839ef"
+red = "#d20f39"
+maroon = "#e64553"
+peach = "#fe640b"
+yellow = "#df8e1d"
+green = "#40a02b"
+teal = "#179299"
+sky = "#04a5e5"
+sapphire = "#209fb5"
+blue = "#1e66f5"
+lavender = "#7287fd"
+text = "#4c4f69"
+subtext1 = "#5c5f77"
+subtext0 = "#6c6f85"
+overlay2 = "#7c7f93"
+overlay1 = "#8c8fa1"
+overlay0 = "#9ca0b0"
+surface2 = "#acb0be"
+surface1 = "#bcc0cc"
+surface0 = "#ccd0da"
+base = "#eff1f5"
+mantle = "#e6e9ef"
+crust = "#dce0e8"
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"

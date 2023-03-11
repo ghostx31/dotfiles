@@ -37,7 +37,7 @@ lvim.builtin.alpha.dashboard.section.footer = {
   type = "text",
   val = text.align_center({ width = 0 }, {
     "",
-    "Write bad code.",
+    "Pain",
   }, 0.5),
   opts = {
     position = "center",
@@ -77,7 +77,6 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- Additional Plugins
 lvim.plugins = {
   { "junegunn/vim-emoji" },
-  { "lervag/vimtex" },
   { "ggandor/lightspeed.nvim" },
   { "catppuccin/nvim",
     as = "catppuccin",
@@ -92,12 +91,8 @@ lvim.plugins = {
   { "github/copilot.vim" },
   { "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
-    setup = function()
-      vim.g.mkdp_filetypes = { "markdown" }
-    end,
-    ft = { "markdown" },
+    setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" },
   },
-  { "lukas-reineke/indent-blankline.nvim" },
   { "fatih/vim-go" },
   { "p00f/nvim-ts-rainbow",
   },
@@ -140,31 +135,15 @@ lvim.plugins = {
 }
 
 vim.g.catppuccin_flavour = "mocha"
+
 vim.g.mkdp_auto_start = 0
-vim.g.mkdp_auto_close = 1
-
-vim.g.mkdp_refresh_slow = 0
-
-vim.g.mkdp_command_for_global = 0
-
-vim.g.mkdp_open_to_the_world = 0
-
-vim.g.mkdp_page_title = '「${name}」'
-
-vim.g.mkdp_filetypes = 'markdown'
-
-vim.g.mkdp_theme = 'dark'
-vim.g.vimtex_view_general_editor = "evince"
-
 
 require("catppuccin").setup({
   dim_inactive = {
     enabled = false,
-    shade = "dark",
-    percentage = 0.15,
   },
   transparent_background = false,
-  term_colors = false,
+  term_colors = true,
   compile = {
     enabled = true,
     path = vim.fn.stdpath "cache" .. "/catppuccin",
@@ -175,9 +154,9 @@ require("catppuccin").setup({
   },
   color_overrides = {
     mocha = {
-      base = "#020202",
+      base = "#000000",
       mantle = "#010101",
-      crust = "#000000",
+      crust = "#020202",
     },
   },
   integrations = {
@@ -205,10 +184,6 @@ require("catppuccin").setup({
       enabled = true,
       show_root = true,
     },
-    neotree = {
-      enabled = true,
-      show_root = true,
-    },
     dap = {
       enabled = false,
       enable_ui = false,
@@ -224,9 +199,7 @@ require("catppuccin").setup({
     barbar = false,
     bufferline = true,
     markdown = true,
-    ts_rainbow = true,
     notify = true,
-    telekasten = true,
     symbols_outline = true,
   },
 })
@@ -237,11 +210,11 @@ function string.starts(self, str)
 end
 
 local hide = function()
-  local home = vim.fn.expand("$HOME") .. "/git/"
+  local home = vim.fn.expand("$HOME") .. "/Code/git/"
   local dataconfig = vim.fn.expand("$HOME") .. "/.local/share/"
   local configdir = vim.fn.expand("$HOME") .. "/.config/"
   local blacklistDir = {
-    [vim.fn.resolve(home .. "personal")] = "Breaking stuff.",
+    [vim.fn.resolve(home .. "Personal")] = "Breaking stuff.",
     [vim.fn.resolve(configdir .. "lvim/config.lua")] = "Breaking neovim config",
     [vim.fn.resolve(dataconfig .. "/lunarvim/lvim")] = "Breaking neovim config"
   }
@@ -271,6 +244,7 @@ require("presence"):setup({
     end
     local visible = {
       "github.com/catppuccin",
+      "github.com/ghostx31",
     }
 
     for _, visible_url in ipairs(visible) do
@@ -320,7 +294,7 @@ require("presence"):setup({
   line_number_text    = "Line %s out of %s", -- Format string rendered when `enable_line_number` is set to true (either string or function(line_number: number, line_count: number): string)
 })
 
-require 'lspconfig'.marksman.setup {}
+-- require 'lspconfig'.marksman.setup {}
 require("indent_blankline").setup {
   show_current_context = true,
   show_current_context_start = true,

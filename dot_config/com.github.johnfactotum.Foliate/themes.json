@@ -1,11 +1,11 @@
 {
   "themes": [
     {
-      "theme-name": "Catppuccin Mocha",
+      "theme-name": "OLEDppuccin",
       "fg-color": "rgb(205,214,244)",
       "bg-color": "rgb(0,0,0)",
       "link-color": "rgb(245, 224, 220)",
-      "invert": false,
+      "invert": true,
       "dark-mode": true
     },
     {
@@ -31,6 +31,14 @@
       "link-color": "rgb(220, 138, 120)",
       "invert": false,
       "dark-mode": false
+    },
+    {
+      "theme-name": "Catppuccin Mocha",
+      "fg-color": "rgb(205,214,244)",
+      "bg-color": "rgb(30,30,46)",
+      "link-color": "rgb(245, 224, 220)",
+      "invert": true,
+      "dark-mode": true
     }
   ]
 }
