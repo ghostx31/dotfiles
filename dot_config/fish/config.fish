@@ -41,7 +41,7 @@ end
 # Set editors 
 set -Ux DIFFPROG (which lvim)
 export EDITOR=(which lvim)
-alias nv="lvim"
+abbr -a nv "lvim"
 
 # Set GPG stuff
 export GPG_TTY=$(tty)
@@ -92,32 +92,32 @@ function backup --argument filename
 end
 
 # Replace ls with exa
-alias ls='exa  -l --color=always --group-directories-first --icons' # preferred listing
-alias la='exa -a --color=always --group-directories-first --icons'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first --icons'  # long format
-alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
-alias l.="exa -a | grep -E '^\.'"                                     # show only dotfiles
+abbr -a ls 'exa  -l --color=always --group-directories-first --icons' # preferred listing
+abbr -a la 'exa -a --color=always --group-directories-first --icons'  # all files and dirs
+abbr -a ll 'exa -l --color=always --group-directories-first --icons'  # long format
+abbr -a lt 'exa -aT --color=always --group-directories-first --icons' # tree listing
+abbr -a l. "exa -a | grep -E '^\.'"                                     # show only dotfiles
 
 
 # Replace some more things with better alternatives
-alias cat='bat --style header --style snip --style changes --style header'
+abbr -a cat 'bat --style header --style snip --style changes --style header'
 
 # Common use
-alias ..='cd ..'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+abbr -a .. 'cd ..'
+abbr -a grep 'grep --color=auto'
+abbr -a fgrep 'fgrep --color=auto'
+abbr -a egrep 'egrep --color=auto'
 alias clear='clear && ghosts'
 
 # Pacman and reflector stuff
-alias listpkg="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
-alias mirrorx='sudo reflector --age 6 --latest 200 --fastest 20 --threads 20 --sort rate --protocol https --verbose --save /etc/pacman.d/mirrorlist'
-alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
-alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
+abbr -a listpkg "pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
+abbr -a mirrorx 'sudo reflector --age 6 --latest 200 --fastest 20 --threads 20 --sort rate --protocol https --verbose --save /etc/pacman.d/mirrorlist'
+abbr cleanup 'sudo pacman -Rns (pacman -Qtdq)'
+abbr -a rip "expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
 # Journalctl stuff
 # Get the error messages from journalctl
-alias jctl="journalctl -p 3 -xb"
+abbr jctl "journalctl -p 3 -xb"
 
 # Print cute little ghosts on the top of the terminal
 function ghosts 
