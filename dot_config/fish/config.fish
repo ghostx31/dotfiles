@@ -98,6 +98,9 @@ abbr -a ll 'exa -l --color=always --group-directories-first --icons'  # long for
 abbr -a lt 'exa -aT --color=always --group-directories-first --icons' # tree listing
 abbr -a l. "exa -a | grep -E '^\.'"                                     # show only dotfiles
 
+# Git abbr 
+abbr -a gc 'git commit -m'
+abbr -a gco 'git checkout'
 
 # Replace some more things with better alternatives
 abbr -a cat 'bat --style header --style snip --style changes --style header'

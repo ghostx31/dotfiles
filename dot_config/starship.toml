@@ -45,7 +45,8 @@ palette = "catppuccin_mocha"
 [directory]
 format = "[$path]($style)[$read_only]($read_only_style)"
 style = 'bg:red fg:#000000'
-read_only = ''
+read_only_style = 'bg:red fg:#000000'
+read_only = ' '
 use_os_path_sep = false
 
 [username]
@@ -66,7 +67,7 @@ style = 'bg:red fg:#000000'
 disabled = false
 format = '[$symbol]($style)'
 style = 'bg:red fg:#000000'
-symbol = ' '
+symbol = '  '
 
 [shlvl]
 style = 'bg:red fg:#000000'
