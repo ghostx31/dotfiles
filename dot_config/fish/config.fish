@@ -110,6 +110,7 @@ abbr -a .. 'cd ..'
 abbr -a grep 'grep --color=auto'
 abbr -a fgrep 'fgrep --color=auto'
 abbr -a egrep 'egrep --color=auto'
+abbr -a cz 'chezmoi'
 alias clear='clear && ghosts'
 
 # Pacman and reflector stuff
