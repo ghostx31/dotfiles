@@ -1,0 +1,89 @@
+{
+    "telemetry.telemetryLevel": "off",
+    "editor.fontFamily": "'CartographCF Nerd Font'",
+    "terminal.external.linuxExec": "/usr/bin/wezterm",
+    "terminal.integrated.fontFamily": "'CartographCF Nerd Font'",
+    "workbench.startupEditor": "none",
+    "editor.fontLigatures": true,
+    "breadcrumbs.enabled": true,
+    "editor.inlineSuggest.enabled": true,
+    "files.autoSave": "onWindowChange",
+    "workbench.iconTheme": "catppuccin-mocha",
+    "github.copilot.enable": {
+      "*": true,
+      "yaml": true,
+      "plaintext": true,
+      "markdown": true,
+      "go": true
+    },
+    "git.autofetch": true,
+    "code-runner.runInTerminal": true,
+    "code-runner.enableAppInsights": false,
+    "vscord.status.image.small.idle.key": "Breaking code!",
+    "vscord.status.details.text.idle": "Wasting time",
+    "vscord.app.name": "Visual Studio Code",
+    "vscord.status.problems.enabled": false,
+    "vscord.status.image.small.idle.text": "Wasting time",
+    "vscord.status.state.text.editing": "Working on {file_name}{file_extension}",
+    "go.toolsManagement.autoUpdate": true,
+    "window.titleBarStyle": "custom",
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "window.zoomLevel": 2,
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+      {
+        "before": [
+          "j",
+          "k"
+        ],
+        "after": [
+          "<Esc>"
+        ]
+      }
+    ],
+    "vim.leader": "<space>",
+    "vim.normalModeKeyBindings": [
+      {
+        "before": [
+          "<C-s>"
+        ],
+        "commands": [
+          "workbench.action.files.save"
+        ]
+      }
+    ],
+    "vim.surround": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.scale": 2,
+    "editor.smoothScrolling": true,
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.fontWeight": "normal",
+    "editor.codeLensFontFamily": "'CartographCF Nerd Font'",
+    "catppuccin.accentColor": "blue",
+    "catppuccin.workbenchMode": "flat",
+    "scm.defaultViewMode": "tree",
+    "catppuccin.colorOverrides": {
+      "mocha": {
+        "base": "#000000",
+        "mantle": "#010101",
+        "crust": "#020202",
+      },
+    },
+    "extensions.experimental.affinity": {
+      "asvetliakov.vscode-neovim": 1
+    },
+    "vim.neovimPath": "/home/ghost/.local/bin/lvim",
+    "vim.neovimConfigPath": "/home/ghost/.local/share/lunarvim/lvim/init.lua",
+    "vim.enableNeovim": true,
+    "vim.neovimUseConfigFile": true,
+    "terminal.integrated.sendKeybindingsToShell": true,
+    "editor.minimap.enabled": false,
+    "workbench.sideBar.location": "right",
+  }

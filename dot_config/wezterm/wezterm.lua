@@ -71,6 +71,7 @@ local opts = {
   clean_exit_codes = { 130 },
   default_cursor_style = "BlinkingBar",
   enable_scroll_bar = false,
+  check_for_updates = false,
 }
 for k, v in pairs(require("keybindings")) do
   opts[k] = v
